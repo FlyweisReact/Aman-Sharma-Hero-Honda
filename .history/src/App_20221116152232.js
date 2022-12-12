@@ -1,0 +1,19 @@
+/** @format */
+
+import React from "react";
+import { Nav } from "react-bootstrap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homescreen from "./Component/Homescreen";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+    <Nav />
+      <Routes>
+        {/* <Route path="/" element={<Homescreen />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
