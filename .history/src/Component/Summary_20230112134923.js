@@ -78,12 +78,12 @@ const Summary = () => {
   console.log(startingDateNew);
   console.log(EndingDate);
 
-  var filterData =
-    EndingDate.length === 12
-      ? coupon
-      : coupon.filter((i) => i.Ad >= startingDateNew && i.Ed <= EndingDate);
+  var filterData = EndingDate.length === 12
+    ? coupon
+    : coupon.filter((i) => i.Ad >= startingDateNew && i.Ed <= EndingDate);
 
-  console.log(EndingDate.length);
+
+    console.log(EndingDate.length)
 
   return (
     <>
@@ -103,10 +103,11 @@ const Summary = () => {
           <Button variant="outline-success">Download Data</Button>
         </div>
 
-        <div className="two-Date">
-          <input type="date" onChange={(e) => setD(e.target.value)} />
-          <input type="date" onChange={(e) => setEndingDate(e.target.value)} />
-        </div>
+<div className="two-Date">
+  
+</div>
+
+  
 
         <Table striped bordered hover>
           <thead>
@@ -130,8 +131,8 @@ const Summary = () => {
                 <td> {i.CouponCode} </td>
                 <td> {i.CustomerEmial} </td>
                 <td> {i.number} </td>
-                <td>{moment(i.Ad).format('MM/DD/YYYY')} </td>
-                <td> {moment(i.Ed).format('MM/DD/YYYY')} </td>
+                <td> {i.Ad} </td>
+                <td> {i.Ed} </td>
               </tr>
             ))}
           </tbody>

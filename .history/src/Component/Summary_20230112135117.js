@@ -130,8 +130,8 @@ const Summary = () => {
                 <td> {i.CouponCode} </td>
                 <td> {i.CustomerEmial} </td>
                 <td> {i.number} </td>
-                <td>{moment(i.Ad).format('MM/DD/YYYY')} </td>
-                <td> {moment(i.Ed).format('MM/DD/YYYY')} </td>
+                <td>{moment(i.)} </td>
+                <td> {i.Ed} </td>
               </tr>
             ))}
           </tbody>

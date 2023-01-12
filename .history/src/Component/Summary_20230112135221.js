@@ -131,7 +131,7 @@ const Summary = () => {
                 <td> {i.CustomerEmial} </td>
                 <td> {i.number} </td>
                 <td>{moment(i.Ad).format('MM/DD/YYYY')} </td>
-                <td> {moment(i.Ed).format('MM/DD/YYYY')} </td>
+                <td> {moment(i.Ad).format('MM/DD/YYYY')} </td>
               </tr>
             ))}
           </tbody>

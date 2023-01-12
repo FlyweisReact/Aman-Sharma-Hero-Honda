@@ -6,7 +6,6 @@ import NavBar from "../Assets/Navbar";
 import "./Search.css";
 import BodyImage from "./Group 539.png";
 import Table from "react-bootstrap/Table";
-import moment from "moment";
 
 function CouponView(props) {
   return (
@@ -72,18 +71,16 @@ const Summary = () => {
   const [startingDate, setD] = useState("");
   const [edingDate, setEndingDate] = useState("");
 
-  const startingDateNew = moment(startingDate).format("YYYY-MM-DD");
-  const EndingDate = moment(edingDate).format("YYYY-MM-DD");
+  var filterData = coupon.filter(dataFilter);
 
-  console.log(startingDateNew);
-  console.log(EndingDate);
+  function dataFilter(date) {
+    return date.Ad >= startingDate && date.
+  }
 
-  var filterData =
-    EndingDate.length === 12
-      ? coupon
-      : coupon.filter((i) => i.Ad >= startingDateNew && i.Ed <= EndingDate);
+  console.log(startingDate);
+  console.log(edingDate);
 
-  console.log(EndingDate.length);
+  console.log(filterData);
 
   return (
     <>
@@ -103,10 +100,8 @@ const Summary = () => {
           <Button variant="outline-success">Download Data</Button>
         </div>
 
-        <div className="two-Date">
-          <input type="date" onChange={(e) => setD(e.target.value)} />
-          <input type="date" onChange={(e) => setEndingDate(e.target.value)} />
-        </div>
+        <input type="date" onChange={(e) => setD(e.target.value)} />
+        <input type="date" onChange={(e) => setEndingDate(e.target.value)} />
 
         <Table striped bordered hover>
           <thead>
@@ -121,7 +116,7 @@ const Summary = () => {
             </tr>
           </thead>
           <tbody>
-            {filterData.map((i, index) => (
+            {coupon.map((i, index) => (
               <tr key={index}>
                 <td>
                   <Button onClick={() => setModalShow(true)}>View</Button>
@@ -130,8 +125,8 @@ const Summary = () => {
                 <td> {i.CouponCode} </td>
                 <td> {i.CustomerEmial} </td>
                 <td> {i.number} </td>
-                <td>{moment(i.Ad).format('MM/DD/YYYY')} </td>
-                <td> {moment(i.Ed).format('MM/DD/YYYY')} </td>
+                <td> {i.Ad} </td>
+                <td> {i.Ed} </td>
               </tr>
             ))}
           </tbody>
